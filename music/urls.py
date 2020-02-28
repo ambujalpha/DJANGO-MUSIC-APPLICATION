@@ -12,4 +12,13 @@ urlpatterns = [
     # /music/<album_id>/
     path('<int:pk>/', views.DetailView.as_view(), name='detail'),
 
+    #/music/album/add/
+    path('album/add/', views.AlbumCreate.as_view(), name='album-add'),
+
+    # /music/album/2/(update)
+    path('<pk>/', views.AlbumUpdate.as_view(), name='album-update'),
+
+    # /music/album/2/delete/
+    path('<pk>/delete/', views.AlbumDelete.as_view(), name='album-delete'),
+
 ]
